@@ -1,6 +1,19 @@
 window.addEventListener("DOMContentLoaded", () => {
   playerState.load();
   document.getElementById("xp-value").textContent = playerState.getXP();
+
+  // Add console logs to check which CSS is applied
+  if (window.matchMedia("(min-width: 769px)").matches) {
+    console.log("desktopstyle.css is applied");
+  } else if (
+    window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches
+  ) {
+    console.log("portraitstyle.css is applied");
+  } else if (
+    window.matchMedia("(max-width: 1024px) and (orientation: landscape)").matches
+  ) {
+    console.log("landscapestyle.css is applied");
+  }
 });
 
 let dragged = null;
